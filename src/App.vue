@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-  <ppm-projectAccess></ppm-projectAccess>
-  <ppm-productAccess></ppm-productAccess>
-  <ppm-strategyAccess></ppm-strategyAccess>
+  <ppm-controls v-bind:accessData="projectAccessData"></ppm-controls>
+  <ppm-controls v-bind:accessData="resourceAccessData"></ppm-controls>
+  <ppm-controls v-bind:accessData="strategyAccessData"></ppm-controls>
   </div>
 </template>
 
 <script>
-import projectAccess from './Components/projectAccess/projectAccess'
-import productAccess from './Components/productAccess/productAccess'
-import strategyAccess from './Components/strategyAccess/strategyAccess'
+import controls from './Components/commonControls/controls'
+import accessData from './data/projectAccess.js'
 export default {
+  data:function(){
+    return accessData
+    },
   components:{
-    'ppm-projectAccess':projectAccess,
-    'ppm-productAccess':productAccess,
-    'ppm-strategyAccess':strategyAccess
+    'ppm-controls':controls
   }
 }
 </script>
